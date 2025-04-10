@@ -18,7 +18,11 @@ def ask_for_the_question():
         question = input("enter a question:")
         if question in list_of_questions:
             print("question has already been added")
-        all_options = options_for_question()
+            continue
+        list_of_questions.append(question)
+        print ("question has been added")
+        
+        answers = options_for_question()
 
 
 def make_file():
@@ -28,3 +32,4 @@ def make_file():
         print("file already exists")
 
 make_file()
+ask_for_the_question()
