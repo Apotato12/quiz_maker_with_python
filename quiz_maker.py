@@ -18,7 +18,7 @@ def ask_for_the_question_and_answer():
         #if the question is not already added add it to the list
         else:
             list_of_questions.append(question)
-    
+        #asks for the choices and the correct asnwer
         print ("question has been added")
         answers = {}
         answers['a'] = input("Please enter option a: ")
@@ -26,7 +26,8 @@ def ask_for_the_question_and_answer():
         answers['c'] = input("Please enter option c: ")
         answers['d'] = input("Please enter option d: ")
         correct_answer = input("Please enter the correct answer (a, b, c, or d): ")
-
+        
+        #inserts the question and answers into the file
         with open(file_name, "a") as file:
             file.write(f"Question: {question}\n")
             for option, answer in answers.items():
@@ -34,12 +35,15 @@ def ask_for_the_question_and_answer():
             file.write(f"Correct Answer: {correct_answer}\n")
             file.write("\n")
 
-        another_question = input("do you want to add another question? (y or n): ")
-        if another_question == "n":
+        #asks if the user wants to add another question
+        another_question = input("do you want to add another question? (y to continue and any other letter to exit): ")
+        #if the user want presses n the program exits
+        if another_question != "y":
             print("exiting the program")
-        else:
+            break
+        elif another_question == "y":
             return ask_for_the_question_and_answer()
-        
+
         return answers, correct_answer
 
 
@@ -51,7 +55,7 @@ def make_file():
 
 def actual_program():
     make_file()
-    ask_for_the_question()
+    ask_for_the_question_and_answer()
 
 
 actual_program()
