@@ -7,7 +7,7 @@ file_name = "quiz.txt"
 def ask_for_the_question_and_answer():
 
     
-    # Loop to ask for the question and answers
+    # Loop to ask for the question and answers until the user presses any letter other than "y"
     while True:
         # Asks for the question
         question = input("Enter a question: ")
