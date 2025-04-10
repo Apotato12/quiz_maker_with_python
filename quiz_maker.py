@@ -5,22 +5,12 @@ file_name = "quiz.txt"
 
 # Defines the function to ask for the question and options
 def ask_for_the_question_and_answer():
-    # List to store the questions
-    list_of_questions = []
+
     
     # Loop to ask for the question and answers
     while True:
         # Asks for the question
         question = input("Enter a question: ")
-        
-        # Check if the question is already added to the list
-        if question in list_of_questions:
-            print("This question has already been added. Please enter a different question.")
-            continue
-        
-        # If the question is not already added, add it to the list
-        list_of_questions.append(question)
-        print("Question has been added.")
 
         # Asks for the choices and the correct answer
         answers = {}
