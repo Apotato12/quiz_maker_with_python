@@ -10,6 +10,12 @@ def options_for_question():
         answers['c'] = input("Please enter option c: ")
         answers['d'] = input("Please enter option d: ")
 
+
+def correct_answer():
+    correct_answer = input("Please enter the correct answer (a, b, c, or d): ")
+    
+
+
 def ask_for_the_question():
     while True:
         question = input("enter a question:")
