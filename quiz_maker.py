@@ -1,5 +1,6 @@
 import os
 
+file_name = "quiz.txt"
 
 def options_for_question():
     answers = []
