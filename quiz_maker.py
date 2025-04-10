@@ -11,6 +11,8 @@ def options_for_question():
         answers['d'] = input("Please enter option d: ")
         correct_answer = input("Please enter the correct answer (a, b, c, or d): ")
 
+        return answers, correct_answer
+
 
 def ask_for_the_question():
     list_of_questions = []
@@ -19,10 +21,17 @@ def ask_for_the_question():
         if question in list_of_questions:
             print("question has already been added")
             continue
+
         list_of_questions.append(question)
         print ("question has been added")
-        
+
         answers = options_for_question()
+
+        new_question = input("Do you want to add another question? (y or n): ")
+        if new_question == "y":
+            continue
+        elif new_question == "n":
+            break
 
 
 def make_file():
@@ -31,5 +40,9 @@ def make_file():
     else:
         print("file already exists")
 
-make_file()
-ask_for_the_question()
+def actual_program():
+    make_file()
+    ask_for_the_question()
+
+
+actual_program()
