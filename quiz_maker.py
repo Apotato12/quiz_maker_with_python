@@ -1,61 +1,62 @@
 import os
 
-#defines the file name to store the quiz answers and questions
+# Defines the file name to store the quiz answers and questions
 file_name = "quiz.txt"
 
-#defines the function to ask for the question and options
+# Defines the function to ask for the question and options
 def ask_for_the_question_and_answer():
-    #list to store the questions
+    # List to store the questions
     list_of_questions = []
-    #loop to ask for the question and answers
+    
+    # Loop to ask for the question and answers
     while True:
-        #asks for the question
-        question = input("enter a question:")
+        # Asks for the question
+        question = input("Enter a question: ")
+        
+        # Check if the question is already added to the list
         if question in list_of_questions:
-            #check if the question is already added on the list
-            print("question has already been added")
+            print("This question has already been added. Please enter a different question.")
             continue
-        #if the question is not already added add it to the list
-        else:
-            list_of_questions.append(question)
-        #asks for the choices and the correct asnwer
-        print ("question has been added")
+        
+        # If the question is not already added, add it to the list
+        list_of_questions.append(question)
+        print("Question has been added.")
+
+        # Asks for the choices and the correct answer
         answers = {}
         answers['a'] = input("Please enter option a: ")
         answers['b'] = input("Please enter option b: ")
         answers['c'] = input("Please enter option c: ")
         answers['d'] = input("Please enter option d: ")
+        
+        #asks for the correct answer
         correct_answer = input("Please enter the correct answer (a, b, c, or d): ")
         
-        #inserts the question and answers into the file
+        # Inserts the question and answers into the file
         with open(file_name, "a") as file:
             file.write(f"Question: {question}\n")
             for option, answer in answers.items():
                 file.write(f"Option {option}: {answer}\n")
-            file.write(f"Correct Answer: {correct_answer}\n")
-            file.write("\n")
+            file.write(f"Correct Answer: {correct_answer}\n\n")
 
-        #asks if the user wants to add another question
-        another_question = input("do you want to add another question? (y to continue and any other letter to exit): ")
-        #if the user want presses another letter than y program exits
-        if another_question != "y":
-            print("exiting the program")
+        # Asks if the user wants to add another question
+        another_question = input("Do you want to add another question? (y to continue and any other letter to exit): ")
+        
+        # If the user presses any letter other than 'y', the program exits
+        if another_question.lower() != "y":
+            print("Exiting the program.")
             break
-        elif another_question == "y":
-            return ask_for_the_question_and_answer()
 
-        return answers, correct_answer
-
-#creates the file if it does not exist
+# Creates the file if it does not exist
 def make_file():
     if not os.path.exists(file_name):
-        open (file_name, "w")
+        open(file_name, "w").close()  # Close the file after creating it
     else:
-        print("file already exists")
-#calls the functions that are used for the code
+        print("File already exists.")
+
+# Calls the functions that are used for the code
 def actual_program():
     make_file()
     ask_for_the_question_and_answer()
-
 
 actual_program()
