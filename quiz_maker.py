@@ -19,15 +19,14 @@ def ask_for_the_question():
         answers['d'] = input("Please enter option d: ")
         correct_answer = input("Please enter the correct answer (a, b, c, or d): ")
 
-        return answers, correct_answer
-
         with open(file_name, "a") as file:
             file.write(f"Question: {question}\n")
             for option, answer in answers.items():
                 file.write(f"Option {option}: {answer}\n")
             file.write(f"Correct Answer: {correct_answer}\n")
             file.write("\n")
-
+            
+        return answers, correct_answer
 
 def make_file():
     if not os.path.exists(file_name):
