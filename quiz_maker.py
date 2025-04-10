@@ -25,8 +25,15 @@ def ask_for_the_question():
                 file.write(f"Option {option}: {answer}\n")
             file.write(f"Correct Answer: {correct_answer}\n")
             file.write("\n")
-            
+
+        another_question = input("do you want to add another question? (y or n): ")
+        if another_question == "n":
+            print("exiting the program")
+        else:
+            return ask_for_the_question()
+        
         return answers, correct_answer
+
 
 def make_file():
     if not os.path.exists(file_name):
