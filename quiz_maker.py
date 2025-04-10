@@ -15,5 +15,9 @@ def ask_for_the_question():
         question = input("enter a question:")
 
 def make_file():
-    if os.path.exists(file_name):
-        os.makedirs(file_name)
+    if not os.path.exists(file_name):
+        open (file_name, "w")
+    else:
+        print("file already exists")
+
+make_file()
