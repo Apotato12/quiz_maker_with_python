@@ -13,9 +13,12 @@ def options_for_question():
 
 
 def ask_for_the_question():
+    list_of_questions = []
     while True:
         question = input("enter a question:")
-        answers = options_for_question()
+        if question in list_of_questions:
+            print("question has already been added")
+        all_options = options_for_question()
 
 
 def make_file():
