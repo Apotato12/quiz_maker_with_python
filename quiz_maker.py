@@ -22,12 +22,6 @@ def ask_for_the_question():
 
         return answers, correct_answer
 
-        new_question = input("Do you want to add another question? (y or n): ")
-        if new_question == "y":
-            continue
-        elif new_question == "n":
-            break
-
 
 def make_file():
     if not os.path.exists(file_name):
