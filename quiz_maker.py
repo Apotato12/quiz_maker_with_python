@@ -37,7 +37,7 @@ def ask_for_the_question_and_answer():
 
         #asks if the user wants to add another question
         another_question = input("do you want to add another question? (y to continue and any other letter to exit): ")
-        #if the user want presses n the program exits
+        #if the user want presses another letter than y program exits
         if another_question != "y":
             print("exiting the program")
             break
@@ -46,13 +46,13 @@ def ask_for_the_question_and_answer():
 
         return answers, correct_answer
 
-
+#creates the file if it does not exist
 def make_file():
     if not os.path.exists(file_name):
         open (file_name, "w")
     else:
         print("file already exists")
-
+#calls the functions that are used for the code
 def actual_program():
     make_file()
     ask_for_the_question_and_answer()
