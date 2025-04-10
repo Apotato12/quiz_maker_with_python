@@ -13,3 +13,7 @@ def options_for_question():
 def ask_for_the_question():
     while True:
         question = input("enter a question:")
+
+def make_file():
+    if os.path.exists(file_name):
+        os.makedirs(file_name)
