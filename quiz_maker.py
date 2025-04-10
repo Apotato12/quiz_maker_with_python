@@ -1,16 +1,24 @@
 import os
 
+#defines the file name to store the quiz answers and questions
 file_name = "quiz.txt"
 
-def ask_for_the_question():
+#defines the function to ask for the question and options
+def ask_for_the_question_and_answer():
+    #list to store the questions
     list_of_questions = []
+    #loop to ask for the question and answers
     while True:
+        #asks for the question
         question = input("enter a question:")
         if question in list_of_questions:
+            #check if the question is already added on the list
             print("question has already been added")
             continue
-
-        list_of_questions.append(question)
+        #if the question is not already added add it to the list
+        else:
+            list_of_questions.append(question)
+    
         print ("question has been added")
         answers = {}
         answers['a'] = input("Please enter option a: ")
@@ -30,7 +38,7 @@ def ask_for_the_question():
         if another_question == "n":
             print("exiting the program")
         else:
-            return ask_for_the_question()
+            return ask_for_the_question_and_answer()
         
         return answers, correct_answer
 
