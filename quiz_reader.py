@@ -3,7 +3,7 @@
 #use the os the check if the file name exists
 #if there is no file name print "file does not exist"
 #if there is a file with the name quiz.txt open the file and read the contents
-#after reading the file read the questions ,answers and correct answer from the file and store them in a dictionart
+#after reading the file read the questions ,answers and correct answer from the file and store them in a dictionary
 #(each question and answer should be seperated by a new line)
 #use the random module to shuffle the questions and answers
 #print the questions and answers to the user and make them choose which one is the correct answer
