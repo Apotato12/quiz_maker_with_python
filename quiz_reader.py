@@ -20,6 +20,7 @@ def question_reader():
         line = lines[i]
         if line.startswith("Question: "):
             question = line[len("Question: "):]
-            print (question)
 
-question_reader()
+def options_reader():
+    
+            
