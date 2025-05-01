@@ -8,3 +8,6 @@ def check_if_file_exists():
         print("Quiz file exists")
     else:
         print("Quiz file does not exist. Please make one")
+
+def question_reader():
+    questions = []
