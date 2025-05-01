@@ -13,12 +13,13 @@ def question_reader():
     questions = []
     with open(file_name, "r") as file:
         lines = file.readlines()
+        
+        i = 0
 
-    lines_iter = iter(lines)
-    while True:
-            line = next(lines_iter).strip()
-            if line.startswith("Question"):
-                question = line[len("question:")]
+    while i < len(lines):
+        line = lines[i]
+        if line.startswith("Question: "):
+            question = line[len("Question: "):]
+            print (question)
 
-
-question_reader
+question_reader()
