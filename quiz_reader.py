@@ -22,5 +22,6 @@ def question_reader():
             question = line[len("Question: "):]
 
 def options_reader():
-    
+    options = []
+
             
