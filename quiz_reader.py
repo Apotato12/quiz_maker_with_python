@@ -41,18 +41,17 @@ def options_reader(lines, start_index):
     return options
 
 def correct_answer_reader(lines, index):
-    correct_answer = lines[index]
-    if correct_answer.startswith("Correct Answer:"):
-        return correct_answer[len("Correct Answer:")].lower()
-    return ""
+    correct_line = lines[index]
+    if correct_line.startswith("Correct Answer:"):
+        return correct_line[len("Correct Answer:"):].strip().lower()
 
 def question_displayer(questions):
     for question, options, correct_answer in questions:
         print(question)
         for option_letter, option_text in options.items():
             print(f"{option_letter}: {option_text}")
-        user_answer = input("please enter your answer:")
-        if user_answer != correct_answer:
+        user_answer = input("please enter your answer:").strip().lower()
+        if user_answer == correct_answer:
             print("correct")
         else:
             print("wrong")
