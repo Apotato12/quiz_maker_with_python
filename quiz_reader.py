@@ -23,6 +23,7 @@ def question_reader():
             options = options_reader(lines, i)
             correct_answer = correct_answer_reader(lines, i + len(options)+ 1)
             questions.append((question, options, correct_answer))
+            i += len(options) + 1
 
 def options_reader(lines, start_index):
     options = {}
@@ -42,4 +43,15 @@ def correct_answer_reader(lines, index):
         return correct_answer[len("Correct Answer:")].lower()
     return ""
 
-            
+def question_displayer(questions):
+    for question, options, correct_answer in questions:
+        print(question)
+        for option_letter, option_text in options.items():
+            print(f"{option_letter}: {option_text}")
+            user_answer = input("please enter your answer:")
+            if user_answer == correct_answer:
+                print("correct")
+            else:
+                print("wrong")
+
+question_displayer(question_reader())
