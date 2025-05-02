@@ -33,7 +33,7 @@ def options_reader(lines, start_index):
     for option_letter in ['a', 'b', 'c', 'd']:
         start_index += 1
         option_line = lines[start_index]
-        start = f"Option {option_letter}:"
+        start = f"Option {option_letter}: "
         if option_line.startswith(start):
             options[option_letter] = option_line[len(start):]
         else:
@@ -51,10 +51,14 @@ def question_displayer(questions):
         print(question)
         for option_letter, option_text in options.items():
             print(f"{option_letter}: {option_text}")
-            user_answer = input("please enter your answer:")
-            if user_answer == correct_answer:
-                print("correct")
-            else:
-                print("wrong")
+        user_answer = input("please enter your answer:")
+        if user_answer != correct_answer:
+            print("correct")
+        else:
+            print("wrong")
 
-question_displayer(question_reader())
+question = question_reader()
+if question:
+    question_displayer(question)
+else:
+    print("No questions to display.")
