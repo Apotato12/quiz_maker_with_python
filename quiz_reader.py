@@ -24,6 +24,9 @@ def question_reader():
             correct_answer = correct_answer_reader(lines, i + len(options)+ 1)
             questions.append((question, options, correct_answer))
             i += len(options) + 1
+        else:
+            i += 1
+        return questions
 
 def options_reader(lines, start_index):
     options = {}
