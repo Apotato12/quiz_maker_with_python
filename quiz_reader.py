@@ -54,7 +54,7 @@ def question_displayer(questions):
         if user_answer == correct_answer:
             print("correct")
         else:
-            print("wrong")
+            print(f"wrong the answer was {correct_answer}")
 
 question = question_reader()
 if question:
