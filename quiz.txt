@@ -1,0 +1,14 @@
+Question: do you like cake?
+Option a: yes
+Option b: no
+Option c: depends
+Option d: maybe
+Correct Answer: a
+
+Question: do you like games?
+Option a: yes
+Option b: no
+Option c: depends
+Option d: maybe
+Correct Answer: a
+
