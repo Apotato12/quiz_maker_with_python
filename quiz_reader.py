@@ -25,6 +25,7 @@ def options_reader(lines, start_index):
     options = []
     for option_letter in ['a', 'b', 'c', 'd']:
         start_index += 1
+        option_line = lines[start_index]
         start = f"option {option_letter}:"
 
 
