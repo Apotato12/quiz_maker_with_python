@@ -20,6 +20,9 @@ def question_reader():
         line = lines[i]
         if line.startswith("Question: "):
             question = line[len("Question: "):]
+            options = options_reader(lines, i)
+            correct_answer = correct_answer_reader(lines, i + len(options)+ 1)
+            questions.append((question, options, correct_answer))
 
 def options_reader(lines, start_index):
     options = {}
