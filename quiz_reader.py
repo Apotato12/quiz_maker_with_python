@@ -21,7 +21,7 @@ def question_reader():
         if line.startswith("Question: "):
             question = line[len("Question: "):]
 
-def options_reader():
+def options_reader(lines, start_index):
     options = []
     for option_letter in ['a', 'b', 'c', 'd']:
         start_index += 1
