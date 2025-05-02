@@ -27,6 +27,7 @@ def options_reader(lines, start_index):
         start_index += 1
         option_line = lines[start_index]
         start = f"option {option_letter}:"
-
-
+        if option_line.startswith(start):
+            options[option_letter] = option_line[len(start):]
+            print(options)
             
