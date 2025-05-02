@@ -23,5 +23,9 @@ def question_reader():
 
 def options_reader():
     options = []
+    for option_letter in ['a', 'b', 'c', 'd']:
+        start_index += 1
+        start = f"option {option_letter}:"
+
 
             
