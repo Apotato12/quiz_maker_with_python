@@ -33,6 +33,10 @@ def options_reader(lines, start_index):
             options[option_letter] = ""
     return options
 
-
+def correct_answer_reader(lines, index):
+    correct_answer = lines[index]
+    if correct_answer.startswith("Correct Answer:"):
+        return correct_answer[len("Correct Answer:")].lower()
+    return ""
 
             
