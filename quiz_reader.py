@@ -15,23 +15,22 @@ def quiz_reader():
     questions = []
     if not check_if_file_exists():
         return questions
-        
     with open(file_name, "r") as file:
         lines = file.readlines()
         
         i = 0
 
     while i < len(lines):
-        line = lines[i]
+        line = lines[i].strip()
         if line.startswith("Question: "):
             question = line[len("Question: "):]
             options = options_reader(lines, i)
-            correct_answer = correct_answer_reader(lines, i + len(options)+ 1)
+            correct_answer = correct_answer_reader(lines, i + len(options) + 1)
             questions.append((question, options, correct_answer))
             i += len(options) + 2
         else:
             i += 1
-        return questions
+    return questions
 
 def options_reader(lines, start_index):
     options = {}
