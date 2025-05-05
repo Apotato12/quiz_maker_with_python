@@ -6,11 +6,16 @@ file_name = "quiz.txt"
 def check_if_file_exists():
     if os.path.exists(file_name):
         print("Quiz file exists")
+        return True
     else:
         print("Quiz file does not exist. Please make one")
+        return False
 
 def quiz_reader():
     questions = []
+    if not check_if_file_exists():
+        return questions
+        
     with open(file_name, "r") as file:
         lines = file.readlines()
         
@@ -23,7 +28,7 @@ def quiz_reader():
             options = options_reader(lines, i)
             correct_answer = correct_answer_reader(lines, i + len(options)+ 1)
             questions.append((question, options, correct_answer))
-            i += len(options) + 1
+            i += len(options) + 2
         else:
             i += 1
         return questions
