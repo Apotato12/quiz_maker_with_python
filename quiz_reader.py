@@ -56,8 +56,8 @@ def question_displayer(questions):
         else:
             print(f"wrong the answer was {correct_answer}")
 
-question = question_reader()
-if question:
-    question_displayer(question)
+quiz = quiz_reader()
+if quiz:
+    question_displayer(quiz)
 else:
     print("No questions to display.")
