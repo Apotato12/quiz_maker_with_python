@@ -50,6 +50,8 @@ def correct_answer_reader(lines, index):
         return correct_line[len("Correct Answer:"):].strip().lower()
 
 def question_displayer(questions):
+    random.shuffle(questions)
+
     for question, options, correct_answer in questions:
         print(question)
         for option_letter, option_text in options.items():
