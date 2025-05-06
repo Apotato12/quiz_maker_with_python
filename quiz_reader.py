@@ -51,6 +51,7 @@ def correct_answer_reader(lines, index):
 
 def question_displayer(questions):
     random.shuffle(questions)
+    score = 0
 
     for question, options, correct_answer in questions:
         print(question)
@@ -59,8 +60,10 @@ def question_displayer(questions):
         user_answer = input("please enter your answer:").strip().lower()
         if user_answer == correct_answer:
             print("correct")
+            score += 1
         else:
             print(f"wrong the answer was {correct_answer}")
+    print(f"Your final score is: {score}/{len(questions)}")
 
 quiz = quiz_reader()
 if quiz:
