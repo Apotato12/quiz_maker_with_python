@@ -21,11 +21,11 @@ def quiz_reader():
         index = 0
 
     while index < len(lines):
-        line = lines[i].strip()
+        line = lines[index].strip()
         if line.startswith("Question: "):
             question = line[len("Question: "):]
-            options = options_reader(lines, i)
-            correct_answer = correct_answer_reader(lines, i + len(options) + 1)
+            options = options_reader(lines, index)
+            correct_answer = correct_answer_reader(lines, index + len(options) + 1)
             questions.append((question, options, correct_answer))
             index += len(options) + 2
         else:
