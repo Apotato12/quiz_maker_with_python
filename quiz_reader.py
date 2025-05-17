@@ -18,18 +18,18 @@ def quiz_reader():
     with open(file_name, "r") as file:
         lines = file.readlines()
         
-        i = 0
+        index = 0
 
-    while i < len(lines):
+    while index < len(lines):
         line = lines[i].strip()
         if line.startswith("Question: "):
             question = line[len("Question: "):]
             options = options_reader(lines, i)
             correct_answer = correct_answer_reader(lines, i + len(options) + 1)
             questions.append((question, options, correct_answer))
-            i += len(options) + 2
+            index += len(options) + 2
         else:
-            i += 1
+            index += 1
     return questions
 
 def options_reader(lines, start_index):
